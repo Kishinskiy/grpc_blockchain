@@ -3,7 +3,6 @@ package main
 import (
 	"github.com/Kishinskiy/grpc_blockchain/server/blockchain"
 	"golang.org/x/net/context"
-
 	"github.com/Kishinskiy/grpc_blockchain/proto"
 	"google.golang.org/grpc"
 	"log"
