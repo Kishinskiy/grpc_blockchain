@@ -48,6 +48,6 @@ func getBlockchain(){
 	}
 	log.Println("blocks:")
 	for _ , b := range  bc.Blocks {
-		log.Printf("hash: %s, prev block hash: %s, data: $s", b.Hash, b.PrevBlockHash, b.Data )
+		log.Printf("hash: %s, prev block hash: %s, data: %s", b.Hash, b.PrevBlockHash, b.Data )
 	}
 }
