@@ -23,7 +23,7 @@ func main(){
 }
 
 type Server struct {
-    Blockchain *blockchain.Blcockchain
+    Blockchain *blockchain.Blockchain
 
 }
 
@@ -40,8 +40,8 @@ func (s *Server) GetBlockchain(ctx context.Context, in *proto.GetBlockchainReque
     for _, b := range s.Blockchain.Blocks {
     	resp.Blocks = append(resp.Blocks, &proto.Block{
     		PrevBlockHash: b.PrevBlockHash,
-			Hash: b.Hash,
 			Data: b.Data,
+			Hash: b.Hash,
 		})
 	}
 	return resp, nil

@@ -6,12 +6,12 @@ import (
 )
 
 type Block struct {
-	Hash string
+	Data          string
 	PrevBlockHash string
-	Data string
+	Hash          string
 }
 
-type Blcockchain struct {
+type Blockchain struct {
 	Blocks []*Block
 }
 
@@ -29,7 +29,7 @@ func NewBlock(data string, prevBlockHash string) *Block {
 	return block
 }
 
-func (bc *Blcockchain) AddBlock(data string) *Block {
+func (bc *Blockchain) AddBlock(data string) *Block {
 	prevBlock := bc.Blocks[len(bc.Blocks) -1]
 	newBlock := NewBlock(data, prevBlock.Hash)
 	bc.Blocks = append(bc.Blocks, newBlock)
@@ -37,8 +37,8 @@ func (bc *Blcockchain) AddBlock(data string) *Block {
 	return newBlock
 }
 
-func NewBlockchain() *Blcockchain{
-	return &Blcockchain{[]*Block{NewGenesisBlock()}}
+func NewBlockchain() *Blockchain{
+	return &Blockchain{[]*Block{NewGenesisBlock()}}
 }
 
 func NewGenesisBlock() *Block {
